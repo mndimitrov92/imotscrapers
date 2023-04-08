@@ -5,13 +5,9 @@ https://docs.scrapy.org/en/latest/topics/practices.html#running-multiple-spiders
 from scrapy.crawler import CrawlerProcess, CrawlerRunner
 from scrapy.utils.log import configure_logging
 from scrapy.utils.project import get_project_settings
-# @TODO Import the Spider classes and add them to the list
-
-# @TODO Include all imported spider classes in the list below
-my_spiders = []
 
 
-def run_simultaneously():
+def run_simultaneously(my_spiders):
     """
     Run all spiders simultaneously.
     """
@@ -22,7 +18,7 @@ def run_simultaneously():
     process.start()  # the script will block here until all crawling jobs are finished
 
 
-def run_sequentially():
+def run_sequentially(my_spiders):
     """
     Run all spiders one after the other
     """
@@ -43,3 +39,16 @@ def run_sequentially():
 
     crawl()
     reactor.run()  # the script will block here until the last crawl call is finished
+
+
+def execute(spider_list):
+    """
+    The function executes a list of spiders sequentially and simultaneously.
+
+    :param spider_list: spider_list is a list of spider objects that will be passed to the functions
+    run_sequentially and run_simultaneously. These spider objects are likely instances of a web scraping
+    framework such as Scrapy or Beautiful Soup, and contain the logic for crawling and extracting data
+    from websites
+    """
+    run_sequentially(my_spiders=spider_list)
+    run_simultaneously(my_spiders=spider_list)
