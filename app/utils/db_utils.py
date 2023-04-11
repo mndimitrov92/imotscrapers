@@ -1,10 +1,7 @@
 
 
-
-
 def get_url_list(source):
     pass
-
 
 
 class AdsHandler:
@@ -20,15 +17,6 @@ class AdsHandler:
             self._add_new_ads_record(record_data)
             self._add_ads_record(record_data)
 
-    def _record_exists(self, record_data):
-        return True
-
-    def _add_new_ads_record(self, record_data):
-        pass
-
-    def _add_ads_record(self, record_data):
-        pass
-
     def empty_new_ads_table(self):
         pass
 
@@ -42,6 +30,15 @@ class AdsHandler:
         """
         Checks if the session of the records has expired and if so, removes it.
         """
+        pass
+
+    def _record_exists(self, record_data):
+        return False
+
+    def _add_new_ads_record(self, record_data):
+        pass
+
+    def _add_ads_record(self, record_data):
         pass
 
 

@@ -15,14 +15,13 @@ from novdom1 import Novdom1Spider
 from place2live import Place2liveSpider
 from primoplus import PrimoplusSpider
 from superimoti import SuperimotiSpider
-from ues import UesSpider
 from yourhome import YourhomeSpider
 from run_spiders import execute
 
 
 spider_list = [AddressbgSpider, ArcorealSpider, AvistaSpider, BezkomisionaSpider, BulgarianpropertiesSpider,
                EraSpider, ImotbgSpider, LuximmoSpider, MirelabgSpider, Novdom1Spider, Place2liveSpider,
-               PrimoplusSpider, SuperimotiSpider, UesSpider, YourhomeSpider, ImotiSpider]
+               PrimoplusSpider, SuperimotiSpider, YourhomeSpider, ImotiSpider]
 
 
 execute(spider_list=spider_list)
